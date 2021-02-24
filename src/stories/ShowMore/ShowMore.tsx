@@ -1,13 +1,12 @@
-import React from 'react'
-import ClassNames from 'classnames'
+import React from "react";
+import ClassNames from "classnames";
 
-import styles from './ShowMore.module.scss'
-console.log(styles)
+import styles from "./ShowMore.module.scss";
 
 export interface ShowMoreProps {
-  length?: number
-  showAll?: boolean
-  showMoreHandler?: () => void
+  length?: number;
+  showAll?: boolean;
+  showMoreHandler?: () => void;
 }
 
 export const ShowMore: React.FC<ShowMoreProps> = ({
@@ -37,9 +36,9 @@ export const ShowMore: React.FC<ShowMoreProps> = ({
         </svg>
       </div>
       <span className={styles.showMoreText}>
-        {' '}
-        {showAll ? 'Hide' : `Show more (${length - 9})`}
+        {" "}
+        {showAll ? "Hide" : `Show more (${length - 9})`}
       </span>
     </div>
-  )
-}
+  );
+};

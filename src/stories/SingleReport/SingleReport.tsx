@@ -1,24 +1,32 @@
-import React from 'react'
+import React from "react";
+import ClassNames from "classnames";
 
-import styles from './SingleReport.module.scss'
+import styles from "./SingleReport.module.scss";
 
 export interface SingleReportProps {
-  reportCode?: string
-  reportName?: string
-  isNew?: boolean
-  favorite?: boolean
+  id: number;
+  reportCode?: string;
+  reportName?: string;
+  isNew?: boolean;
+  favorite?: boolean;
+  starClickHandler?: (id: number) => void;
 }
 
 export const SingleReport: React.FC<SingleReportProps> = ({
+  id,
   reportCode,
   reportName,
   isNew,
   favorite,
+  starClickHandler = () => {},
 }) => {
   return (
     <div className={styles.singleReport}>
       <div className={styles.singleReportContainer}>
-        <div className={styles.singleReportStar}>
+        <div
+          className={styles.singleReportStar}
+          onClick={() => starClickHandler(id)}
+        >
           {favorite ? (
             <svg
               width="14"
@@ -47,13 +55,14 @@ export const SingleReport: React.FC<SingleReportProps> = ({
             </svg>
           )}
         </div>
-        <span className={styles.singleReportCode}>{reportCode}</span>
-        &nbsp;
-        <span>-</span>
-        &nbsp;
-        <span className={styles.singleReportName}>{reportName}</span>
+        <span
+          className={ClassNames(
+            styles.singleReportText,
+            !isNew && styles.singleReportTextLarge
+          )}
+        >{`${reportCode} - ${reportName}`}</span>
       </div>
       {isNew && <div className={styles.singleReportNew}>New</div>}
     </div>
-  )
-}
+  );
+};

@@ -16,7 +16,7 @@ import {
   AreaSeries,
 } from "react-jsx-highcharts";
 
-interface report {
+export interface report {
   id: number;
   reportCode: string;
   reportName: string;
@@ -24,26 +24,35 @@ interface report {
   favorite: boolean;
 }
 
-interface ReportsCardProps {
+export interface ReportsCardProps {
   catHeading?: string;
   description?: string;
   graphDescription?: string;
   chartLabel?: string;
-  reports?: report[];
+  reportsFromServer?: report[];
   graphData?: ReactText[][];
 }
 
 export const ReportsCard: React.FC<ReportsCardProps> = ({
-  reports = [],
-  catHeading = "",
+  reportsFromServer = [],
+  catHeading = "Custom",
   graphDescription = "",
   description = "",
   chartLabel = "",
   graphData = [],
 }) => {
   const [showAll, setShowAll] = useState(false);
+  const [reports, setReports] = useState([...reportsFromServer]);
 
   const showMoreHandler = () => setShowAll((showAll) => !showAll);
+  const starClickHandler = (id: number) => {
+    setReports((prevReports) => {
+      const result = prevReports.map((report) =>
+        report.id === id ? { ...report, favorite: !report.favorite } : report
+      );
+      return result;
+    });
+  };
 
   return (
     <div className={styles.reportsCard}>
@@ -93,10 +102,12 @@ export const ReportsCard: React.FC<ReportsCardProps> = ({
                 <>
                   <SingleReport
                     key={report.id}
+                    id={report.id}
                     reportCode={report.reportCode}
                     reportName={report.reportName}
                     isNew={report.isNew}
                     favorite={report.favorite}
+                    starClickHandler={starClickHandler}
                   />
                   <ShowMore
                     key={uuidv4()}
@@ -110,10 +121,12 @@ export const ReportsCard: React.FC<ReportsCardProps> = ({
             return (
               <SingleReport
                 key={report.id}
+                id={report.id}
                 reportCode={report.reportCode}
                 reportName={report.reportName}
                 isNew={report.isNew}
                 favorite={report.favorite}
+                starClickHandler={starClickHandler}
               />
             );
           })
@@ -133,10 +146,12 @@ export const ReportsCard: React.FC<ReportsCardProps> = ({
             ) : (
               <SingleReport
                 key={report.id}
+                id={report.id}
                 reportCode={report.reportCode}
                 reportName={report.reportName}
                 isNew={report.isNew}
                 favorite={report.favorite}
+                starClickHandler={starClickHandler}
               />
             )
           )
@@ -145,10 +160,12 @@ export const ReportsCard: React.FC<ReportsCardProps> = ({
               return report ? (
                 <SingleReport
                   key={report.id}
+                  id={report.id}
                   reportCode={report.reportCode}
                   reportName={report.reportName}
                   isNew={report.isNew}
                   favorite={report.favorite}
+                  starClickHandler={starClickHandler}
                 />
               ) : (
                 <div key={uuidv4()} className={styles.reportsCardCell}></div>

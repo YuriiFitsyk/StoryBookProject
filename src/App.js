@@ -9,7 +9,7 @@ function App() {
       "Monitor your overall finances including sales, refunds, taxes, payments and more",
     graphDescription: "Revenue by week",
     chartLabel: "£",
-    reports: [
+    reportsFromServer: [
       {
         id: 1,
         reportCode: "FI000",
@@ -159,7 +159,7 @@ function App() {
       "Monitor your overall finances including sales, refunds, taxes, payments and more",
     graphDescription: "New clients by week",
     chartLabel: "int",
-    reports: [
+    reportsFromServer: [
       {
         id: 1,
         reportCode: "FI000",
@@ -221,7 +221,7 @@ function App() {
       "Monitor your overall finances including sales, refunds, taxes, payments and more",
     graphDescription: "Utilization by week",
     chartLabel: "%",
-    reports: [
+    reportsFromServer: [
       {
         id: 1,
         reportCode: "FI000",

@@ -1,55 +1,59 @@
-import React from 'react'
-import { SingleReport } from './SingleReport'
+/* eslint-disable import/no-anonymous-default-export */
+import React from "react";
+import { SingleReport, SingleReportProps } from "./SingleReport";
 
 export default {
   component: SingleReport,
-  title: 'SingleReport',
+  title: "SingleReport",
   args: {
-    reportCode: 'FI000',
-    reportName: 'Daily Sales',
+    id: 1,
+    reportCode: "FI000",
+    reportName: "Daily Sales",
     isNew: false,
     favorite: false,
   },
   argTypes: {
     reportCode: {
       control: {
-        type: 'text',
+        type: "text",
       },
     },
     reportName: {
       control: {
-        type: 'text',
+        type: "text",
       },
     },
     isNew: {
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
     favorite: {
       control: {
-        type: 'boolean',
+        type: "boolean",
       },
     },
   },
-}
+};
 
-const SingleReportStory: any = ({ ...args }) => <SingleReport {...args} />
+const SingleReportStory: any = ({ ...args }: SingleReportProps) => (
+  <SingleReport {...args} />
+);
 
-export const Basic = SingleReportStory.bind({})
+export const Basic = SingleReportStory.bind({});
 
-export const Favorite = SingleReportStory.bind({})
+export const Favorite = SingleReportStory.bind({});
 Favorite.args = {
   favorite: true,
-}
+};
 
-export const New = SingleReportStory.bind({})
+export const New = SingleReportStory.bind({});
 New.args = {
   isNew: true,
-}
+};
 
-export const NewAndFavorite = SingleReportStory.bind({})
+export const NewAndFavorite = SingleReportStory.bind({});
 NewAndFavorite.args = {
   isNew: true,
   favorite: true,
-}
+};

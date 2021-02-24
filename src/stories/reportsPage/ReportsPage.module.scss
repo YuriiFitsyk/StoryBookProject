@@ -1,0 +1,162 @@
+body {
+  font-family: "Circular Std", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #3d3d46;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ReportsPage {
+  max-width: 1176px;
+  min-height: 900px;
+  background: #ffffff;
+  border-radius: 4px;
+  //for tests:
+  border: 1px solid black;
+  box-sizing: content-box;
+}
+
+.ReportsPageHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ReportsPageHeaderContainer {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 14px;
+  line-height: 18px;
+  color: #9292a3;
+}
+
+.ReportsPagePath {
+  font-size: 14px;
+  line-height: 18px;
+  color: #cfcfd7;
+}
+
+.ReportsPageTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+
+  color: #3d3d46;
+}
+
+.SearchContainer {
+  position: relative;
+  margin: 24px 22px;
+}
+
+.ReportsPageSearch {
+  padding-left: 12px;
+  padding-right: 50px;
+  height: 40px;
+  width: 256px;
+
+  background: #ffffff;
+  outline: none;
+  border: 1px solid #ecedf0;
+  border-radius: 4px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #595959;
+  text-overflow: ellipsis;
+}
+
+.ReportsPageSearch::placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #b8b8c0;
+}
+
+.ReportsPageSearch:focus {
+  border: 1px solid #54b2d3;
+
+  box-shadow: 0px 0px 4px #a6dcef;
+}
+
+.ReportsPageSearchButtonsContainer {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  transform: translate(0, calc(20px - 50%));
+  display: flex;
+  align-items: center;
+}
+
+.ReportsPageSearchImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReportsSearchClearButton {
+  padding: 0;
+  margin-left: 5px;
+  border: none;
+  outline: none;
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.ReportsSearchClearButton path {
+  transition: all 0.3s;
+}
+
+.ReportsSearchClearButton:hover path {
+  fill: rgb(0, 140, 255);
+}
+
+.ReportsContainer {
+  padding: 0 24px 24px;
+}
+
+.ReportsCategoryContainer {
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 360px);
+  justify-content: center;
+  gap: 24px;
+  border-top: 1px solid #ecedf0;
+}
+
+
+.ReportsFoundReportsContainer {
+  margin-top: 24px;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ecedf0;
+  border-radius: 4px;
+}
+
+.FoundReport {
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+
+  line-height: 22px;
+  color: #9292a2;
+}
+
+.FoundReport:not(:first-child) {
+  border-top: 1px solid #ecedf0;
+}

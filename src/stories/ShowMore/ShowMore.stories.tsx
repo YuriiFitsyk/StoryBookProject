@@ -1,9 +1,11 @@
-import React from 'react'
-import { ShowMore } from './ShowMore'
+/* eslint-disable import/no-anonymous-default-export */
+
+import React from "react";
+import { ShowMore } from "./ShowMore";
 
 export default {
   component: ShowMore,
-  title: 'ShowMore',
+  title: "ShowMore",
   args: {
     length: 15,
     showAll: false,
@@ -11,17 +13,17 @@ export default {
   argTypes: {
     length: {
       control: {
-        type: 'number',
+        type: "number",
       },
       showAll: {
         control: {
-          type: 'boolean',
+          type: "boolean",
         },
       },
     },
   },
-}
+};
 
-const ShowMoreStory = ({ ...args }) => <ShowMore {...args} />
+const ShowMoreStory = ({ ...args }) => <ShowMore {...args} />;
 
-export const Basic = ShowMoreStory.bind({})
+export const Basic = ShowMoreStory.bind({});

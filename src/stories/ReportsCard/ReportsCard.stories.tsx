@@ -43,7 +43,7 @@ const ReportsCardStory: any = ({ ...args }) => <ReportsCard {...args} />;
 
 export const Basic = ReportsCardStory.bind({});
 Basic.args = {
-  reports: [
+  reportsFromServer: [
     {
       id: 1,
       reportCode: "FI000",
@@ -144,7 +144,7 @@ FewReports.args = {
   catHeading: "Clients",
   graphDescription: "New clients by week",
   chartLabel: "int",
-  reports: [
+  reportsFromServer: [
     {
       id: 1,
       reportCode: "FI000",
@@ -205,7 +205,7 @@ ManyReports.args = {
   catHeading: "Sales",
   graphDescription: "Revenue by week",
   chartLabel: "£",
-  reports: [
+  reportsFromServer: [
     {
       id: 1,
       reportCode: "FI000",

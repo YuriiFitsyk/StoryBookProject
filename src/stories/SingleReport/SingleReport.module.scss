@@ -2,7 +2,7 @@
   box-sizing: border-box;
 
   height: 39px;
-  width: 360px;
+  width: 358px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,8 +29,16 @@
   align-items: center;
 }
 
-.singleReportCode {
+.singleReportText {
   margin-left: 9.38px;
+  width: 246px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.singleReportTextLarge {
+  width: 304px;
 }
 
 .singleReportNew {

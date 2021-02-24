@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import { SingleReport } from "./SingleReport";
+import { ReportsPage } from "./ReportsPage";
 
-describe("SingleReport", () => {
+describe("ReportsPage", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<SingleReport id={1} />);
+    const { baseElement } = render(<ReportsPage />);
     expect(baseElement).toBeTruthy();
   });
 });
